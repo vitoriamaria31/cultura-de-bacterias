@@ -28,5 +28,10 @@
         "ciclo": 9,
         "especie": "E. coli resistente",
         "populacao": 100
+    },
+    {
+        "ciclo": 6,
+        "especie": "E. coli resistente",
+        "populacao": 70
     }
 ]

@@ -40,3 +40,24 @@ class Simulacao:
         resultado += self.antibiotico.mostrar_dados()
 
         return resultado
+    
+    
+    def salvar_historico(self):
+        import json
+
+        dados = {
+            "ciclo": self.ciclo,
+            "especie": self.bacteria.get_nome(),
+            "populacao": self.bacteria.get_populacao()
+        }
+
+        try:
+            with open("historico.json", "r", encoding="utf-8") as arquivo:
+                historico = json.load(arquivo)
+        except:
+            historico = []
+
+        historico.append(dados)
+
+        with open("historico.json", "w", encoding="utf-8") as arquivo:
+            json.dump(historico, arquivo, indent=4, ensure_ascii=False)
